@@ -1,0 +1,30 @@
+{
+    # use the staging let's encrypt certs
+    acme_ca https://acme-staging-v02.api.letsencrypt.org/directory
+    email marco@test.ch
+}
+
+# domain name.
+test.ch:8080
+
+# Set this path to your site's directory.
+root * /io/www/html
+
+# Enable the static file server.
+file_server
+
+@ows {
+    path_regexp map_file ^/ows/(.*)
+}
+
+#redir @ows /demos.html?{query}&map=/io/data/{http.regexp.map_file.1}.qgs
+
+# localhost:8080/ows/AV_TH_V1?SERVICE=wms
+# directly call QGIS via fcgi
+reverse_proxy @ows qgisserver:9993 {
+    transport fastcgi {
+        env QUERY_STRING {query}&map=/io/data/{http.regexp.map_file.1}.qgs
+        env PGSERVICEFILE /io/.pg_service.conf
+        # fastcgi_param PGSERVICEFILE /io/.pg_service.conf;
+    }
+}
