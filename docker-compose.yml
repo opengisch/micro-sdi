@@ -24,6 +24,7 @@ services:
       QGIS_SERVER_PARALLEL_RENDERING: "true"
       QGIS_SERVER_MAX_THREADS: 2
       QGIS_SERVER_LOG_LEVEL: 0
+      QGIS_SERVER_LANDING_PAGE_PROJECTS_DIRECTORIES: /io/data
     volumes:
       - ./data/projects:/io/data:ro
       #- ./data/fonts:/usr/local/share/fonts:ro

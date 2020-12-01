@@ -17,6 +17,10 @@ file_server
     path_regexp map_file ^/ows/(.*)
 }
 
+@wfs3 {
+    path_regexp wfs_matcher ^/wfs3/(.*)/
+}
+
 #redir @ows /demos.html?{query}&map=/io/data/{http.regexp.map_file.1}.qgs
 
 # https://localhost/ows/test?SERVICE=WMS&REQUEST=GetCapabilities
@@ -24,6 +28,18 @@ file_server
 reverse_proxy @ows qgisserver:9993 {
     transport fastcgi {
         env QUERY_STRING {query}&map=/io/data/{http.regexp.map_file.1}.qgs
-        env PGSERVICEFILE /io/.pg_service.conf
     }
+}
+
+
+# https://localhost/wfs3/test/collections
+reverse_proxy @wfs3 qgisserver:9993 {
+    transport fastcgi {
+        #env QGIS_PROJECT_FILE /io/data/{http.regexp.wfs_matcher.1}.qgs
+        env QUERY_STRING {query}&map=/io/data/{http.regexp.wfs_matcher.1}.qgs
+    }
+}
+
+reverse_proxy * qgisserver:9993 {
+    transport fastcgi
 }
