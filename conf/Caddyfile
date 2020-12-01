@@ -5,7 +5,7 @@
 }
 
 # domain name.
-test.ch:8080
+localhost
 
 # Set this path to your site's directory.
 root * /io/www/html
@@ -19,12 +19,11 @@ file_server
 
 #redir @ows /demos.html?{query}&map=/io/data/{http.regexp.map_file.1}.qgs
 
-# localhost:8080/ows/AV_TH_V1?SERVICE=wms
+# https://localhost/ows/test?SERVICE=WMS&REQUEST=GetCapabilities
 # directly call QGIS via fcgi
 reverse_proxy @ows qgisserver:9993 {
     transport fastcgi {
         env QUERY_STRING {query}&map=/io/data/{http.regexp.map_file.1}.qgs
         env PGSERVICEFILE /io/.pg_service.conf
-        # fastcgi_param PGSERVICEFILE /io/.pg_service.conf;
     }
 }
