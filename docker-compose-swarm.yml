@@ -1,0 +1,71 @@
+version: '3.7'
+
+services:
+
+  db:
+    image: kartoza/postgis:12.1
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - "node.role==manager"
+    restart: unless-stopped
+    ports:
+      - 54321:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql
+    environment:
+      POSTGRES_USER: docker
+      POSTGRES_PASS: docker
+    networks:
+      - qgisnet
+
+  qgisserver:
+    image: openquake/qgis-server:3.16
+    deploy:
+      replicas: 4
+    restart: unless-stopped
+    environment:
+      # Do not run the embedded copy of nginx
+      SKIP_NGINX: "true"
+      QGIS_SERVER_PARALLEL_RENDERING: "true"
+      QGIS_SERVER_MAX_THREADS: 2
+      QGIS_SERVER_LOG_LEVEL: 0
+      QGIS_SERVER_LANDING_PAGE_PROJECTS_DIRECTORIES: /io/data
+    volumes:
+      - ./data/projects:/io/data
+      #- ./data/fonts:/usr/local/share/fonts:ro
+      #- ./data/projects/svg:/var/lib/qgis/.local/share/QGIS/QGIS3/profiles/default/svg:ro
+      #- ./conf/pg_service.conf:/etc/postgresql-common/pg_service.conf:ro
+    expose:
+      - 9993
+    networks:
+      - qgisnet
+    depends_on:
+      - db
+
+  web:
+    image: caddy/caddy:alpine
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - "node.hostname==manager"
+    restart: unless-stopped
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./conf/Caddyfile:/etc/caddy/Caddyfile
+    depends_on:
+      - qgisserver
+    environment:
+      ACME_AGREE: "true"
+    networks:
+      - qgisnet
+
+networks:
+  qgisnet:
+  
+volumes:
+  postgres_data:
