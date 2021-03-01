@@ -23,7 +23,7 @@ file_server
 
 #redir @ows /demos.html?{query}&map=/io/data/{http.regexp.map_file.1}.qgs
 
-# https://localhost/ows/test?SERVICE=WMS&REQUEST=GetCapabilities
+# https://localhost/ows/bees?SERVICE=WMS&REQUEST=GetCapabilities
 # directly call QGIS via fcgi
 reverse_proxy @ows qgisserver:9993 {
     transport fastcgi {
@@ -32,7 +32,7 @@ reverse_proxy @ows qgisserver:9993 {
 }
 
 
-# https://localhost/wfs3/test/collections
+# https://localhost/wfs3/bees/collections
 reverse_proxy @wfs3 qgisserver:9993 {
     transport fastcgi {
         #env QGIS_PROJECT_FILE /io/data/{http.regexp.wfs_matcher.1}.qgs
