@@ -2,6 +2,7 @@
     # use the staging let's encrypt certs
     acme_ca https://acme-staging-v02.api.letsencrypt.org/directory
     email marco@test.ch
+    local_certs
 }
 
 # domain name.
