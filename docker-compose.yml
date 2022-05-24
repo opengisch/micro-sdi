@@ -16,7 +16,7 @@ services:
       - qgisnet
 
   qgisserver:
-    image: openquake/qgis-server:3.16
+    image: opengisch/qgis-server:stable
     restart: unless-stopped
     environment:
       # Do not run the embedded copy of nginx
