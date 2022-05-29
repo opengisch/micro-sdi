@@ -16,3 +16,6 @@ The included demo project can be found at `https://localhost/ows/bees` it expose
 
 ## Publishing own projects
 To publish a project, add it to the .qgs file (not .qgz) `/data/projects/` folder. The project will automatically be available at `https://localhost/ows/projectname` 
+
+## PostGIS DB
+The includer PostGIS DB has a database called `gis`, listens on port `5432` and the user and password are `docker`. Obviously this in not production-ready!
