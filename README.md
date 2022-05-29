@@ -8,3 +8,6 @@ If you want to publish it to a domain, you can modify the Caddyfile by changing 
 
 ## Demo
 The included demo project can be found at `https://localhost/ows/bees` it exposes WMS, WMTS and WFS.
+
+## Publishing own projects
+To publish a project, add it to the .qgs file (not .qgz) `/data/projects/` folder. The project will automatically be available at `https://localhost/ows/projectname` 
