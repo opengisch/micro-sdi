@@ -8,6 +8,7 @@ If you want to publish it to a domain, you can modify the Caddyfile by changing 
 
 ## Running
 Start with: `docker-compose up -d`
+
 destroy with: `docker-compose down`
 
 ## Demo
