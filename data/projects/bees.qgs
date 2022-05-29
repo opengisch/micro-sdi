@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis saveUserFull="Marco Bernasocchi" saveDateTime="2022-05-30T00:46:14" projectname="Simple Bee Farming Demo" version="3.24.3-Tisler" saveUser="marco">
+<qgis saveUserFull="Marco Bernasocchi" saveDateTime="2022-05-30T00:50:05" projectname="Simple Bee Farming Demo" version="3.24.3-Tisler" saveUser="marco">
   <homePath path=""/>
   <title>Simple Bee Farming Demo</title>
   <autotransaction active="0"/>
@@ -40,7 +40,7 @@
     <layer-tree-layer name="Online OpenStreetMap" checked="Qt::Checked" providerKey="wms" source="crs=EPSG:3857&amp;format&amp;type=xyz&amp;url=http://a.tile.openstreetmap.org/%7Bz%7D/%7Bx%7D/%7By%7D.png&amp;zmax=19&amp;zmin=0" legend_split_behavior="0" expanded="0" legend_exp="" id="OpenStreetMap_442da2b8_ea6a_4114_a4f4_e472a9f7d8b9" patch_size="0,0">
       <customproperties>
         <Option type="Map">
-          <Option name="expandedLegendNodes"/>
+          <Option name="expandedLegendNodes" type="invalid"/>
         </Option>
       </customproperties>
     </layer-tree-layer>
@@ -61,10 +61,10 @@
   <mapcanvas name="theMapCanvas" annotationsVisible="1">
     <units>meters</units>
     <extent>
-      <xmin>1030520.59246511431410909</xmin>
-      <ymin>5910828.17378190997987986</ymin>
-      <xmax>1030653.88403443107381463</xmax>
-      <ymax>5910967.4895882373675704</ymax>
+      <xmin>1029922.94228439719881862</xmin>
+      <ymin>5909323.35935722570866346</ymin>
+      <xmax>1032844.2047669239109382</xmax>
+      <ymax>5912376.65102700609713793</ymax>
     </extent>
     <rotation>0</rotation>
     <destinationsrs>
@@ -232,15 +232,15 @@
         <encoding></encoding>
         <crs>
           <spatialrefsys nativeFormat="Wkt">
-            <wkt></wkt>
+            <wkt>PROJCRS["WGS 84 / Pseudo-Mercator",BASEGEOGCRS["WGS 84",ENSEMBLE["World Geodetic System 1984 ensemble",MEMBER["World Geodetic System 1984 (Transit)"],MEMBER["World Geodetic System 1984 (G730)"],MEMBER["World Geodetic System 1984 (G873)"],MEMBER["World Geodetic System 1984 (G1150)"],MEMBER["World Geodetic System 1984 (G1674)"],MEMBER["World Geodetic System 1984 (G1762)"],MEMBER["World Geodetic System 1984 (G2139)"],ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]],ENSEMBLEACCURACY[2.0]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4326]],CONVERSION["Popular Visualisation Pseudo-Mercator",METHOD["Popular Visualisation Pseudo Mercator",ID["EPSG",1024]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["False easting",0,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",0,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["easting (X)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["northing (Y)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Web mapping and visualisation."],AREA["World between 85.06°S and 85.06°N."],BBOX[-85.06,-180,85.06,180]],ID["EPSG",3857]]</wkt>
             <proj4>+proj=merc +a=6378137 +b=6378137 +lat_ts=0 +lon_0=0 +x_0=0 +y_0=0 +k=1 +units=m +nadgrids=@null +wktext +no_defs</proj4>
-            <srsid>0</srsid>
-            <srid>0</srid>
-            <authid></authid>
-            <description></description>
-            <projectionacronym></projectionacronym>
-            <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <srsid>3857</srsid>
+            <srid>3857</srid>
+            <authid>EPSG:3857</authid>
+            <description>WGS 84 / Pseudo-Mercator</description>
+            <projectionacronym>merc</projectionacronym>
+            <ellipsoidacronym>EPSG:7030</ellipsoidacronym>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
@@ -1790,8 +1790,8 @@ def my_form_open(dialog, layer, feature):
           <Option name="isOfflineEditable" value="true" type="QString"/>
           <Option name="remoteProvider" value="postgres" type="QString"/>
           <Option name="remoteSource" value="dbname='demo' host=lizmapdemo.opengis.ch port=5432 user='editor1' password='editor1' sslmode=disable key='id' srid=2056 type=Point table=&quot;citybees&quot;.&quot;apiary&quot; (geom) sql=" type="QString"/>
-          <Option name="variableNames"/>
-          <Option name="variableValues"/>
+          <Option name="variableNames" type="invalid"/>
+          <Option name="variableValues" type="invalid"/>
         </Option>
       </customproperties>
       <blendMode>0</blendMode>
@@ -3545,8 +3545,8 @@ def my_form_open(dialog, layer, feature):
           <Option name="isOfflineEditable" value="true" type="QString"/>
           <Option name="remoteProvider" value="postgres" type="QString"/>
           <Option name="remoteSource" value="dbname='demo' host=lizmapdemo.opengis.ch port=5432 user='editor1' password='editor1' sslmode=disable key='id' srid=2056 type=Polygon table=&quot;citybees&quot;.&quot;area&quot; (geom) sql=" type="QString"/>
-          <Option name="variableNames"/>
-          <Option name="variableValues"/>
+          <Option name="variableNames" type="invalid"/>
+          <Option name="variableValues" type="invalid"/>
         </Option>
       </customproperties>
       <blendMode>0</blendMode>
@@ -4064,13 +4064,14 @@ def my_form_open(dialog, layer, feature):
     <WMSCrsList type="QStringList">
       <value>EPSG:4326</value>
       <value>EPSG:2056</value>
+      <value>EPSG:3857</value>
     </WMSCrsList>
     <WMSDefaultMapUnitsPerMm type="double">1</WMSDefaultMapUnitsPerMm>
     <WMSExtent type="QStringList">
-      <value>2600294.84272</value>
-      <value>1199271.6499</value>
-      <value>2601930.25085</value>
-      <value>1200025.50303</value>
+      <value>1027826.25060536619275808</value>
+      <value>5909323.35935722570866346</value>
+      <value>1034940.89644595491699874</value>
+      <value>5912376.65102700609713793</value>
     </WMSExtent>
     <WMSFeatureInfoUseAttributeFormSettings type="bool">false</WMSFeatureInfoUseAttributeFormSettings>
     <WMSFees type="QString">no conditions apply</WMSFees>
@@ -4093,8 +4094,16 @@ def my_form_open(dialog, layer, feature):
     <WMSUrl type="QString"></WMSUrl>
     <WMSUseLayerIDs type="bool">false</WMSUseLayerIDs>
     <WMTSGrids>
-      <CRS type="QStringList"/>
-      <Config type="QStringList"/>
+      <CRS type="QStringList">
+        <value>EPSG:4326</value>
+        <value>EPSG:3857</value>
+        <value>EPSG:2056</value>
+      </CRS>
+      <Config type="QStringList">
+        <value>EPSG:4326,90,-180,279541132.0143589,18</value>
+        <value>EPSG:3857,20037508.342789248,-20037508.342789248,559082264.0287179,18</value>
+        <value>EPSG:2056,1539101.713923017,2309095.649580887,9701390,18</value>
+      </Config>
     </WMTSGrids>
     <WMTSJpegLayers>
       <Group type="QStringList"/>
@@ -4104,13 +4113,13 @@ def my_form_open(dialog, layer, feature):
     <WMTSLayers>
       <Group type="QStringList"/>
       <Layer type="QStringList"/>
-      <Project type="bool">false</Project>
+      <Project type="bool">true</Project>
     </WMTSLayers>
     <WMTSMinScale type="int">5000</WMTSMinScale>
     <WMTSPngLayers>
       <Group type="QStringList"/>
       <Layer type="QStringList"/>
-      <Project type="bool">false</Project>
+      <Project type="bool">true</Project>
     </WMTSPngLayers>
     <WMTSUrl type="QString"></WMTSUrl>
     <qfieldsync>
@@ -4547,7 +4556,7 @@ def my_form_open(dialog, layer, feature):
           <layer-tree-layer name="Fields" checked="Qt::Checked" legend_split_behavior="0" expanded="0" legend_exp="" id="ogr_dbname___home_marco_dev_QField_demo_projects_citybees_new_gpkg__table__area___geom__sql__ba518f87_384f_494b_acd8_66843717f48b" patch_size="0,0">
             <customproperties>
               <Option type="Map">
-                <Option name="expandedLegendNodes"/>
+                <Option name="expandedLegendNodes" type="invalid"/>
                 <Option name="showFeatureCount" value="0" type="QString"/>
               </Option>
             </customproperties>
@@ -4555,7 +4564,7 @@ def my_form_open(dialog, layer, feature):
           <layer-tree-layer name="Countries" checked="Qt::Checked" legend_split_behavior="0" expanded="1" legend_exp="" id="countries_a5e8d4da_f5b9_48ce_9909_c3760e271a9e" patch_size="0,0">
             <customproperties>
               <Option type="Map">
-                <Option name="expandedLegendNodes"/>
+                <Option name="expandedLegendNodes" type="invalid"/>
               </Option>
             </customproperties>
           </layer-tree-layer>
@@ -4598,7 +4607,7 @@ def my_form_open(dialog, layer, feature):
   <Bookmarks/>
   <ProjectViewSettings UseProjectScales="0">
     <Scales/>
-    <DefaultViewExtent ymin="5910828.17378190997987986" ymax="5910967.4895882373675704" xmax="1030749.55202932830434293" xmin="1030424.92447021708358079">
+    <DefaultViewExtent ymin="5909323.35935722570866346" ymax="5912376.65102700609713793" xmax="1034940.89644595491699874" xmin="1027826.25060536619275808">
       <spatialrefsys nativeFormat="Wkt">
         <wkt>PROJCRS["WGS 84 / Pseudo-Mercator",BASEGEOGCRS["WGS 84",ENSEMBLE["World Geodetic System 1984 ensemble",MEMBER["World Geodetic System 1984 (Transit)"],MEMBER["World Geodetic System 1984 (G730)"],MEMBER["World Geodetic System 1984 (G873)"],MEMBER["World Geodetic System 1984 (G1150)"],MEMBER["World Geodetic System 1984 (G1674)"],MEMBER["World Geodetic System 1984 (G1762)"],MEMBER["World Geodetic System 1984 (G2139)"],ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]],ENSEMBLEACCURACY[2.0]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4326]],CONVERSION["Popular Visualisation Pseudo-Mercator",METHOD["Popular Visualisation Pseudo Mercator",ID["EPSG",1024]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["False easting",0,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",0,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["easting (X)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["northing (Y)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Web mapping and visualisation."],AREA["World between 85.06°S and 85.06°N."],BBOX[-85.06,-180,85.06,180]],ID["EPSG",3857]]</wkt>
         <proj4>+proj=merc +a=6378137 +b=6378137 +lat_ts=0 +lon_0=0 +x_0=0 +y_0=0 +k=1 +units=m +nadgrids=@null +wktext +no_defs</proj4>
