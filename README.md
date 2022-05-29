@@ -6,6 +6,10 @@ It comes with Docker-compose and Docker swarm examples. it listens by default to
 
 If you want to publish it to a domain, you can modify the Caddyfile by changing `localhost` to your domain and by deleting the `local_certs` line
 
+## Running
+Start with: `docker-compose up -d`
+destroy with: `docker-compose down`
+
 ## Demo
 The included demo project can be found at `https://localhost/ows/bees` it exposes WMS, WMTS and WFS.
 
