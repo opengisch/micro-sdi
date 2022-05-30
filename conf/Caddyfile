@@ -9,7 +9,7 @@
 localhost
 
 # Set this path to your site's directory.
-root * /io/www/html
+root * /io/www
 
 # Enable the static file server.
 file_server
@@ -39,8 +39,4 @@ reverse_proxy @wfs3 qgisserver:9993 {
         #env QGIS_PROJECT_FILE /io/data/{http.regexp.wfs_matcher.1}.qgs
         env QUERY_STRING {query}&map=/io/data/{http.regexp.wfs_matcher.1}.qgs
     }
-}
-
-reverse_proxy * qgisserver:9993 {
-    transport fastcgi
 }
