@@ -11,6 +11,11 @@ Start with: `docker-compose up -d`
 
 destroy with: `docker-compose down`
 
+## Endpoints
+- `/` Publishes whatewer is found in the `www` folder
+- `/ows/` Exposes the OGC services of QGIS server
+- `/wfs3/` Exposes the OGCAPIF (not completely working)
+
 ## Demo
 The included demo project can be found at `https://localhost/ows/bees` it exposes WMS, WMTS and WFS.
 
