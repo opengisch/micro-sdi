@@ -25,8 +25,10 @@ services:
       QGIS_SERVER_MAX_THREADS: 2
       QGIS_SERVER_LOG_LEVEL: 0
       QGIS_SERVER_LANDING_PAGE_PROJECTS_DIRECTORIES: /io/data
+      QGIS_PLUGINPATH: /io/plugins
     volumes:
       - ./data/projects:/io/data:ro
+      - ./data/plugins:/io/plugins:ro
       #- ./data/fonts:/usr/local/share/fonts:ro
       #- ./data/projects/svg:/var/lib/qgis/.local/share/QGIS/QGIS3/profiles/default/svg:ro
       #- ./conf/pg_service.conf:/etc/postgresql-common/pg_service.conf:ro
